@@ -1,4 +1,4 @@
-import {Producto} from 'src/app/models/Producto'
+import {Producto} from 'src/app/models/Product'
 
 export class Cliente{
     id_Cliente: number

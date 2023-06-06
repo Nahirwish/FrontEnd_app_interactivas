@@ -15,5 +15,10 @@ export class ClienteServiceService {
   getAll(): Observable<any> {
     return this.http.get(this.url + '/total')
   }
+
+  add(c: Client, productID: number): Observable<any> {
+    return this.http.post(this.url + '/'+ productID, c)
+  }
 }
+
 
