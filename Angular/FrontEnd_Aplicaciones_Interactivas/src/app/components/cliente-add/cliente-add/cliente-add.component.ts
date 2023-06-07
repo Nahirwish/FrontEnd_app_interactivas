@@ -20,4 +20,21 @@ export class ClienteAddComponent {
     this.c.nombre = ""
   }
 
+  get id(){return this.clientForm.get('id')}
+  get nombre(){return this.clientForm.get('nombre')}
+
+
+  addClient(){
+    let c = new Client()
+    c.id = this.id.value
+    c.nombre = this.nombre.value
+
+    this.clientService.add(c).subscribe(()=>{
+      this.id.setValue('')
+      this.nombre.setValue('')
+    })
+
+  }
+  
+
 }
