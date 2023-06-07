@@ -27,7 +27,7 @@ export class ClienteServiceService {
   }
 
   update(cliente: Cliente):Observable<any>{
-    return this.http.post(this.url + '/'+ cliente.id + '/update', cliente)
+    return this.http.post(this.url + '/'+ cliente.id_Cliente + '/update', cliente)
   }
 }
 
