@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { Cliente } from '../models/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class ClienteServiceService {
   delete(id: number):Observable<any>{
     return this.http.post(this.url + '/' + id + '/delete')
 
+  }
+
+  update(cliente: Cliente):Observable<any>{
+    return this.http.post(this.url + '/'+ cliente.id + '/update', cliente)
   }
 }
 

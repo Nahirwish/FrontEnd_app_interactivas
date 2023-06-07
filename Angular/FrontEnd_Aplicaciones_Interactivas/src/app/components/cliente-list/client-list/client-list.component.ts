@@ -13,7 +13,7 @@ export class ClientListComponent implements OnInit {
   productList = new Array<Producto>
 
 
-  constructor(private clientService: ClienteServiceService,private productService: ProductoServiceService)
+  constructor(private modalService: ModalService, private clientService: ClienteServiceService,private productService: ProductoServiceService)
 
   ngOnInit(){
     this.clientService.getAll().subscribe(totalResponse =>{
@@ -48,7 +48,7 @@ export class ClientListComponent implements OnInit {
   }
 
   add(){
-    Cliente c = new Client()
+    let c = new Client()
     c.nombre = document.getElementById("nombre").value
     this.clientService.add(c, producto.value ).subscribe(()=>{
       location.reload()
@@ -56,7 +56,17 @@ export class ClientListComponent implements OnInit {
     })
   }
 
-  view(client: Client, view)
+  view(client: Client, view: any){
+    this.modalService.open(view).result.then(()=>{
+      let c = new Client()
+      c.id = client.id
+      c.nombre = client.nombre
+
+      this.clientService.update(c).subscribe(()=>{
+        location.reload()
+      })
+    })
+  }
   
 
 }
