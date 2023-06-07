@@ -19,6 +19,11 @@ export class ClienteServiceService {
   add(c: Client, productID: number): Observable<any> {
     return this.http.post(this.url + '/'+ productID, c)
   }
+
+  delete(id: number):Observable<any>{
+    return this.http.post(this.url + '/' + id + '/delete')
+
+  }
 }
 
 

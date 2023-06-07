@@ -11,7 +11,8 @@
             <tr *ngFor  ="let client for clientList">
                 <td>{{Cliente.id}}</td>
                 <td>{{Cliente.nombre}}</td>
-                <td><button class="btn_ver" (click)="delete(client.id)">Eliminar</button></td>
+                <td><button id="btn_ver" (click)="ver(client, view)">Ver</button></td>
+                <td><button id="btn_delete" (click)="delete(client.id)">Eliminar</button></td>
             </tr>
         </tbody>
         <tfoot>
@@ -24,8 +25,9 @@
     </table>
 
     <ng-modal #view let-modal>
-        <input class="input_id">
-        <input class="input_nombre">
+        <input id="input_id">
+        <input id="input_nombre">
+        <button>Guardar</button>
     </ng-modal> 
     
 

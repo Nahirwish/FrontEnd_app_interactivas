@@ -52,9 +52,11 @@ export class ClientListComponent implements OnInit {
     c.nombre = document.getElementById("nombre").value
     this.clientService.add(c, producto.value ).subscribe(()=>{
       location.reload()
-      
+
     })
   }
+
+  view(client: Client, view)
   
 
 }
