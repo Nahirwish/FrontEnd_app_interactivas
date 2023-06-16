@@ -13,7 +13,7 @@ export class ClientListComponent implements OnInit {
   productList = new Array<Producto>
 
 
-  constructor(private modalService: ModalService, private clientService: ClienteServiceService,private productService: ProductoServiceService)
+  constructor(private modalService: ModalService, private clientService: ClienteServiceService,private productService: ProductService){}
 
   ngOnInit(){
     this.clientService.getAll().subscribe(totalResponse =>{
@@ -59,7 +59,7 @@ export class ClientListComponent implements OnInit {
   view(client: Client, view: any){
     this.modalService.open(view).result.then(()=>{
       let c = new Client()
-      c.id = client.id
+      c.id_Cliente = client.id_Cliente
       c.nombre = client.nombre
 
       this.clientService.update(c).subscribe(()=>{

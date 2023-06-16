@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Client } from 'src/app/models/Client';
 import { ClienteServiceService } from 'src/app/services/cliente-service.service';
-import {Observable, of} from 'rxjs'
-
+import { Observable, of} from 'rxjs'
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cliente-add',
@@ -14,21 +14,21 @@ export class ClienteAddComponent {
   nombre: String
   clientForm: FormGroup
 
-  constructor(private clientService: ClienteServiceService)
+  constructor(private clientService: ClienteServiceService){}
 
   ngOnInit(){
     this.id = 0
     this.nombre = ""
   }
 
-  get id(){return this.clientForm.get('id')}
-  get nombre(){return this.clientForm.get('nombre')}
+  getid(){return this.clientForm.get('id')}
+  getnombre(){return this.clientForm.get('nombre')}
 
 
   add(){
     let c = new Client()
-    c.id = this.id.value
-    c.nombre = this.nombre.value
+    c.id_Cliente = this.id.valueOf()
+    c.nombre = this.nombre.valueOf()
 
     this.clientService.add(c).subscribe(()=>{
       this.id.setValue('')
