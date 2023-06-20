@@ -2,10 +2,10 @@
     <div class="Contenedor">
         <h2>Add Client</h2>
         <div class="input_id">
-            <input formControlName ="client_id" class="formControl" maxlength="8">
-            <p *ngIf = "client_id.error.required">Campo obligatorio</p>
-            <p *ngIf = "client_id.error.pattern">Minimo 8 numeros</p>
-            <p *ngIf = "client_id.error.idTaken">ID ya existente</p>
+            <input formControlName ="id_cliente" class="formControl" maxlength="8">
+            <p *ngIf = "id_cliente.error.required">Campo obligatorio</p>
+            <p *ngIf = "id_cliente.error.pattern">Minimo 8 numeros</p>
+            <p *ngIf = "id_cliente.error.idTaken">ID ya existente</p>
         </div>
 
         <div class="input_nombre">

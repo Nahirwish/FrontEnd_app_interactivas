@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/Client';
 import { Producto } from 'src/app/models/Product';
 import { ClienteServiceService } from 'src/app/services/cliente-service.service';
+import { ProductoServiceService } from 'src/app/services/producto-service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-client-list',
@@ -13,7 +15,7 @@ export class ClientListComponent implements OnInit {
   productList = new Array<Producto>
 
 
-  constructor(private modalService: ModalService, private clientService: ClienteServiceService,private productService: ProductService){}
+  constructor(private modalService: NgbModal, private clientService: ClienteServiceService,private productService:  ProductoServiceService){}
 
   ngOnInit(){
     this.clientService.getAll().subscribe(totalResponse =>{

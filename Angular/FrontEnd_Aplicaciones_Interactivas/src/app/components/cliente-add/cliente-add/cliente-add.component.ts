@@ -31,8 +31,8 @@ export class ClienteAddComponent {
     c.nombre = this.nombre.valueOf()
 
     this.clientService.add(c).subscribe(()=>{
-      this.id.setValue('')
-      this.nombre.setValue('')
+      this.id = this.id
+      this.nombre = this.nombre
     })
 
   }

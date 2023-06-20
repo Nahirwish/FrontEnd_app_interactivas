@@ -22,7 +22,7 @@ export class ClienteServiceService {
   }
 
   delete(id: number):Observable<any>{
-    return this.http.post(this.url + '/' + id + '/delete')
+    return this.http.post(this.url + '/' + id + '/delete', null)
 
   }
 
