@@ -3,7 +3,7 @@ import { Client } from 'src/app/models/Client';
 import { Producto } from 'src/app/models/Product';
 import { ClienteServiceService } from 'src/app/services/cliente-service.service';
 import { ProductoServiceService } from 'src/app/services/producto-service.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-client-list',
