@@ -9,8 +9,8 @@
         </thead>
         <tbody>
             <tr *ngFor  ="let client for clientList">
-                <td>{{Cliente.id}}</td>
-                <td>{{Cliente.nombre}}</td>
+                <td>{{Client.id}}</td>
+                <td>{{Client.nombre}}</td>
                 <td><button id="btn_ver" (click)="ver(client, view)">Ver</button></td>
                 <td><button id="btn_delete" (click)="delete(client.id)">Eliminar</button></td>
             </tr>
@@ -18,16 +18,16 @@
         <tfoot>
             <tr>
                 <td><input id="nombre"></td>
-                <td><select  id="producto"><option *ngFor ="let product of productList" [ngValue]="product.id"> {{product.nombre}}</option></select></td>
+                <td><select  id="producto"><option *ngFor ="let product of productList" [ngValue]="product.id_Producto"> {{product.nombre}}</option></select></td>
             </tr>
         </tfoot>
 
     </table>
 
-    <ng-modal #view let-modal>
+    <ng-template #view let-modal>
         <input id="input_id">
         <input id="input_nombre">
         <button>Guardar</button>
-    </ng-modal> 
+    </ng-template> 
     
 
